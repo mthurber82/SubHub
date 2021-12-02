@@ -13,42 +13,14 @@ Wireframe
 ![image](https://user-images.githubusercontent.com/88950849/144351318-f07f9333-b375-4ade-83df-31f562b4cfef.png)
 
 
-Folder Structure 
-
--Config
-  -connection.js
- -Controllers
-  -index.js
-  -userRoutes.js
-  -SubscriptionRoutes.js
- -db
-  -schema.sql
- -models
-  -index.js
-  -user.js
-  -subscription.js
- -public
-  -css
-    style.css
-  -js
-    -login.js
-    -logout.js
- -seeds
-  seed.js
-  userData.json
-  subscriptionData.json
- -utils
-  -auth.js
-  -password.js
--views
-  -layouts
-    -main.handlebar.js
-  -homepage.handebar.js
-  -login.handlebar.js
-  -createSubscription.js
-  -createUser.js
--.gitignore
--package.json
--server.js
-  
-  
+Steps to Seed DB: 
+1. Make a pull request of the main branch
+2. Checkout a new branch (git checkout -b <branchName>
+3. Run npm installl to create your local node_modules flder
+4. Add your secrets to the .env file:
+    DB_NAME=subscription_db
+    DB_USER=
+    DB_PASSWORD=
+    PORT=3000
+5. Connect to mySQL in the terminal (mysql -u <username> -p) and run db/schema.sql to create the DB
+6. Quit your mysql connection and run the following to seed the DB: npm run seed
