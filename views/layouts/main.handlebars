@@ -1,26 +1,63 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Subscription Manager</title>
-  <link rel="stylesheet" href="/css/jass.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SubHub</title>
+    <link rel="stylesheet" href="/css/jass.css" />
+  </head>
 
-<body>
+  <body>
     <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">SubHub</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              {{#if loggedIn}}
+                <a class="nav-link" href="/" id="logout">Logout</a>
+              {{else}}
+                <a class="nav-link" href="/login">Login</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="/createUser">SignUp</a>
+                </li>
+              {{/if}}
+            </li>
+          </ul>
+        </div>
+      </nav>
 
     </header>
     <main>
-        {{{ body }}}
+      {{{body}}}
     </main>
     <footer>
 
     </footer>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{else}}
+      <script src="/js/login.js"></script>
+    {{/if}}
 
-</body>
-
-
+  </body>
 
 </html>
