@@ -1,0 +1,21 @@
+
+<div>
+    <div>
+        Welcome to Subscription Manager! Track all your subscriptions and subscription spending in one place.
+        <button> Login </button>
+        <button> Signup </button>
+    </div>
+    <div>
+        Your Subscriptions:
+    </div>
+    
+    {{! iterate over each subscription IF the user_id of the subscription matches id of authenticated user}}
+    {{ #each subscription as |subscript| }}
+        {{#if this.subscription.user_id == user.id}}
+        <div>
+            {{subscription_name}} {{spend}}
+        </div>
+        {{/if}}
+    {{/each}}
+
+</div>
