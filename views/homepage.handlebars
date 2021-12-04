@@ -8,7 +8,7 @@
   </div>
 
   {{! iterate over each subscription IF the user_id of the subscription matches id of authenticated user}}
-  {{#each subs as |subscript|}}
+  {{#each subscriptions.subscriptions as |subscript|}}
     <div>
       {{subscript.subscription_name}}
       {{subscript.spend}}
