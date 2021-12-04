@@ -1,14 +1,11 @@
-const loginFormHandler = async (event) => {
-  // Stop the browser from submitting the form so we can do so with JavaScript
+const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  // Gather the data from the form elements on the page
   const username = document.querySelector("#uname").value.trim();
   const password = document.querySelector("#pword").value.trim();
 
   if (username && password) {
-    // Send the e-mail and password to the server
-    const response = await fetch("/api/users/login", {
+    const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
@@ -17,11 +14,11 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/");
     } else {
-      alert("Failed to log in");
+      alert("Failed to sign up.");
     }
   }
 };
 
 document
-  .querySelector(".login-form")
-  .addEventListener("submit", loginFormHandler);
+  .querySelector(".newUser")
+  .addEventListener("submit", signupFormHandler);
