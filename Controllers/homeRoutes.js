@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
     const subs = subscriptionData.map((sub) => sub.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render("homepage", {
+    res.render("landing", {
       subs,
       loggedIn: req.session.loggedIn,
     });
@@ -31,23 +31,24 @@ router.get("/createUser", async (req, res) => {
   res.render("createUser");
 });
 
-// Use withAuth middleware to prevent access to route
-router.get("/profile", withAuth, async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
+  console.log("hello");
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    const getSubs = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: Project }],
+      include: [{ model: Subscription }],
     });
-
-    const user = userData.get({ plain: true });
-
-    res.render("profile", {
-      ...user,
-      logged_in: true,
+    const subscriptions = getSubs.get({ plain: true });
+    console.log(subscriptions);
+    res.render("homepage", {
+      subscriptions,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({
+      status: "Fail",
+      message: "Could not get users subscriptions",
+    });
   }
 });
 
