@@ -1,34 +1,42 @@
 [
   {
     "subscription_name": "Netflix",
-    "spend": 40
+    "spend": 40,
+    "user_id": 1
   },
   {
     "subscription_name": "24 Hour Fitness",
-    "spend": 60
+    "spend": 60,
+    "user_id": 4
   },
   {
     "subscription_name": "Front End Masters",
-    "spend": 100
+    "spend": 100,
+    "user_id": 6
   },
   {
     "subscription_name": "Hulu",
-    "spend": 45
+    "spend": 45,
+    "user_id": 8
   },
   {
     "subscription_name": "Trifecta",
-    "spend": 13
+    "spend": 13,
+    "user_id": 2
   },
   {
     "subscription_name": "Headspace",
-    "spend": 150
+    "spend": 150,
+    "user_id": 4
   },
   {
     "subscription_name": "Forbes",
-    "spend": 20
+    "spend": 20,
+    "user_id": 6
   },
   {
     "subscription_name": "Microsoft 365",
-    "spend": 46
+    "spend": 46,
+    "user_id": 8
   }
 ]

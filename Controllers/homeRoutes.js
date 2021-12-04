@@ -28,7 +28,6 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/createUser", async (req, res) => {
-  console.log("hello");
   res.render("createUser");
 });
 
