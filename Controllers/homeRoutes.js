@@ -30,6 +30,9 @@ router.get("/", async (req, res) => {
 router.get("/createUser", async (req, res) => {
   res.render("createUser");
 });
+router.get("/createSubscription", async (req, res) => {
+  res.render("createSubscription");
+});
 
 router.get("/dashboard", withAuth, async (req, res) => {
   console.log("hello");
