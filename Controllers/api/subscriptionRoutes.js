@@ -42,10 +42,9 @@ router.get("/", withAuth, async (req, res) => {
 router.get("/:id", withAuth, async (req, res) => {
   try {
     const getSub = await Subscription.findByPk(req.params.id, {});
-    const Sub = getSub.get({ plain: true });
+    const sub = getSub.get({ plain: true });
     req.session.sub_id = sub.id;
-    console.log(post);
-    res.json(Sub);
+    res.json(sub);
   } catch (err) {
     res.status(500).json({
       status: "Fail",
@@ -81,11 +80,11 @@ router.put("/:id", withAuth, async (req, res) => {
   }
 });
 
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete("/:subId", withAuth, async (req, res) => {
   try {
     const deleteSub = await Subscription.destroy({
       where: {
-        id: req.params.id,
+        id: req.params.subId,
         user_id: req.session.user_id,
       },
     });
