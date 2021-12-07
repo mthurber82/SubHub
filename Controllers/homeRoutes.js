@@ -12,6 +12,8 @@ router.get("/", async (req, res) => {
           attributes: ["username"],
         },
       ],
+      attributes: ["subscription_name"],
+      distinct: true,
     });
 
     // Serialize data so the template can read it
@@ -30,7 +32,7 @@ router.get("/", async (req, res) => {
 router.get("/createUser", async (req, res) => {
   res.render("createUser");
 });
-router.get("/createSubscription", async (req, res) => {
+router.get("/createSubscription", withAuth, async (req, res) => {
   res.render("createSubscription");
 });
 
