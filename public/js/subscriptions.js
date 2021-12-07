@@ -2,11 +2,13 @@ const createHandler = async (event) => {
   event.preventDefault();
   const subscription_name = document.querySelector("#subname").value;
   const spend = document.querySelector("#spendmonthly").value;
+  const usage = document.querySelector("#usage").value;
+  const renewal_date = document.querySelector("#renewal").value;
 
-  if (subscription_name && spend) {
+  if (subscription_name && spend && usage && renewal_date) {
     const response = await fetch("api/subscription", {
       method: "POST",
-      body: JSON.stringify({ subscription_name, spend }),
+      body: JSON.stringify({ subscription_name, spend, usage, renewal_date }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -76,8 +78,8 @@ const delBtnHandler = async (event) => {
   }
 };
 
-document.querySelector(".AddSub").addEventListener("submit", getcontentHandler);
-document.querySelector(".getSub").addEventListener("click", createHandler);
+document.querySelector(".AddSub").addEventListener("submit", createHandler);
+document.querySelector(".getSub").addEventListener("click", getcontentHandler);
 document
   .querySelector(".updateSub")
   .addEventListener("click", uptateBtnhandler);

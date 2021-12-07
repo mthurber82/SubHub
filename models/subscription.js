@@ -26,7 +26,7 @@ Subscription.init(
     },
     renewal_date: {
       type: DataTypes.DATEONLY,
-      allowNull: false,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,

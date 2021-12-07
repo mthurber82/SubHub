@@ -12,8 +12,20 @@
   {{! iterate over each subscription IF the user_id of the subscription matches id of authenticated user}}
   {{#each subscriptions.subscriptions as |subscript|}}
     <div>
-      {{subscript.subscription_name}}
-      {{subscript.spend}}
+      <div>
+        <p>Name: {{subscript.subscription_name}}</p>
+        <p>Spend: {{subscript.spend}}</p>
+        <p>Usage: {{subscript.usage}} hrs per week</p>
+        <p>Renewal Date:{{subscript.renewal_date}}</p>
+      </div>
+      <button
+        class="btn btn-sm btn-primary"
+        data-update={{sub.id}}
+        data-toggle="modal"
+        data-target="#updateModal"
+        id="first-update"
+      >Update</button>
+      <button class="btn btn-sm btn-danger" data-id="{{sub.id}}">Delete</button>
     </div>
 
   {{/each}}
