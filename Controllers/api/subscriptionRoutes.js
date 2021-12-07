@@ -39,3 +39,69 @@ router.get("/", withAuth, async (req, res) => {
     });
   }
 });
+router.get("/:id", withAuth, async (req, res) => {
+  try {
+    const getSub = await Subscription.findByPk(req.params.id, {});
+    const Sub = getSub.get({ plain: true });
+    req.session.sub_id = sub.id;
+    console.log(post);
+    res.json(Sub);
+  } catch (err) {
+    res.status(500).json({
+      status: "Fail",
+      message: "Could not grab subscription",
+    });
+  }
+});
+
+router.put("/:id", withAuth, async (req, res) => {
+  try {
+    await Subscription.update(
+      {
+        subscription_name: req.body.subscription_name,
+        spend: req.body.spend,
+        usage: req.body.usage,
+        renewal_date: req.body.renewal_date,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+    res.status(200).json({
+      status: "Success",
+      message: "Subscription Updated",
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "Fail",
+      message: err,
+    });
+  }
+});
+
+router.delete("/:id", withAuth, async (req, res) => {
+  try {
+    const deleteSub = await Subscription.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if (!deleteSub) {
+      res.status(404).json({
+        status: "Fail",
+        message: "No subscription found with this id",
+      });
+      return;
+    }
+    res.status(200).json(deleteSub);
+  } catch (err) {
+    res.status(500).json({
+      status: "Fail",
+      message: "Could not delete subscription",
+    });
+  }
+});
