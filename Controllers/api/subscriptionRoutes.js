@@ -122,6 +122,35 @@ router.get("/search", withAuth, async (req, res) => {
   }
 });
 
+router.get("/validate", withAuth, async (req, res) => {
+  const { name } = req.query;
+  console.log(name);
+  try {
+    const getSub = await Subscription.findAll({
+      where: {
+        subscription_name: {
+          [Op.startsWith]: name,
+        },
+      },
+      options: {
+        distinct: true,
+      },
+    });
+    if (!getSub) {
+      res.json({
+        status: "Not Found",
+        message: "No subscription found with this name",
+      });
+    }
+    res.json(getSub);
+  } catch (err) {
+    res.status(500).json({
+      status: "Fail",
+      message: err,
+    });
+  }
+});
+
 router.get("/:id", withAuth, async (req, res) => {
   try {
     const getSub = await Subscription.findByPk(req.params.id, {});
