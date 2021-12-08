@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { User, Subscription } = require("../../models");
 const withAuth = require("../../utils/auth");
 const { Op } = require("sequelize");
+const path = require("path");
+const fs = require("fs");
 
 //Create New Subscription
 
@@ -150,6 +152,24 @@ router.get("/validate", withAuth, async (req, res) => {
       message: err,
     });
   }
+});
+
+router.get("/imgs", withAuth, async (req, res) => {
+  const directoryPath = "public/img";
+  //passsing directoryPath and callback function
+  fs.readdir(directoryPath, function (err, files) {
+    //handling error
+    if (err) {
+      return console.log("Unable to scan directory: " + err);
+    }
+    vals = [];
+    //listing all files using forEach
+    files.forEach(function (file) {
+      // Do whatever you want to do with the file
+      vals.push(file);
+    });
+    res.json(vals);
+  });
 });
 
 router.get("/:id", withAuth, async (req, res) => {

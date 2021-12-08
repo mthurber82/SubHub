@@ -13,6 +13,7 @@
   <div class="getSub">
     {{#each subscriptions.subscriptions as |subscript|}}
       <div>
+        <img src="/img/{{subscript.filename}}"  />
         <p>Name: {{subscript.subscription_name}}</p>
         <p>Spend: {{subscript.spend}}</p>
         <p>Usage: {{subscript.usage}} hrs per week</p>
