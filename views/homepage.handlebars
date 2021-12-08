@@ -10,18 +10,123 @@
     <a class="nav-link" href="/createSubscription">Create New Subscription</a>
   </button>
   {{! iterate over each subscription IF the user_id of the subscription matches id of authenticated user}}
-  {{#each subscriptions.subscriptions as |subscript|}}
-    <div>
-      {{subscript.subscription_name}}
-      {{subscript.spend}}
-    </div>
+  <div class="getSub">
+    {{#each subscriptions.subscriptions as |subscript|}}
+      <div>
+        <p>Name: {{subscript.subscription_name}}</p>
+        <p>Spend: {{subscript.spend}}</p>
+        <p>Usage: {{subscript.usage}} hrs per week</p>
+        <p>Renewal Date:{{subscript.renewal_date}}</p>
+      </div>
+      <button
+        class="btn btn-sm btn-primary"
+        data-update={{subscript.id}}
+        data-toggle="modal"
+        data-target="#updateModal"
+        id="first-update"
+      >Update</button>
+      <button
+        class="btn btn-sm btn-danger"
+        data-update={{subscript.id}}
+        data-toggle="modal"
+        data-target="#deleteModal"
+      >Delete</button>
 
-  {{/each}}
+    {{/each}}
+  </div>
 
   <div id="charts">
     <canvas id="myChart"></canvas>
   </div>
 
 </div>
+
+<div
+  class="modal fade"
+  id="updateModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="updateModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateModalLabel">Update your subscription</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="sub-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="sub-name" />
+          </div>
+          <div class="form-group">
+            <label for="sub-spend" class="col-form-label">Spend:</label>
+            <input class="form-control" id="sub-spend"></input>
+          </div>
+          <div class="form-group">
+            <label for="sub-usage" class="col-form-label">Usage:</label>
+            <input class="form-control" id="sub-usage"></input>
+          </div>
+          <div class="form-group">
+            <label for="sub-renewal" class="col-form-label">Renewal Date:</label>
+            <input type="date" class="form-control" id="sub-renewal"></input>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="update-button"
+          data-put=""
+        >Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="deleteModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="deleteModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Are you sure?</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="delete-button"
+          data-put=""
+        >Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/createChart.js"></script>
+<script src="./js/subscriptions.js"></script>

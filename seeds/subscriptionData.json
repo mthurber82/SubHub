@@ -2,41 +2,57 @@
   {
     "subscription_name": "Netflix",
     "spend": 40,
+    "usage": 20,
+    "renewal_date": "5/01/22",
     "user_id": 1
   },
   {
     "subscription_name": "24 Hour Fitness",
     "spend": 60,
+    "usage": 40,
+    "renewal_date": "6/23/22",
     "user_id": 4
   },
   {
     "subscription_name": "Front End Masters",
     "spend": 100,
+    "usage": 10,
+    "renewal_date": "7/17/22",
     "user_id": 6
   },
   {
     "subscription_name": "Hulu",
     "spend": 45,
+    "usage": 5,
+    "renewal_date": "4/12/22",
     "user_id": 8
   },
   {
     "subscription_name": "Trifecta",
     "spend": 13,
+    "usage": 2,
+    "renewal_date": "7/13/22",
     "user_id": 2
   },
   {
     "subscription_name": "Headspace",
     "spend": 150,
+    "usage": 20,
+    "renewal_date": "6/01/22",
     "user_id": 4
   },
   {
     "subscription_name": "Forbes",
     "spend": 20,
+    "usage": 6,
+    "renewal_date": "12/23/21",
     "user_id": 6
   },
   {
     "subscription_name": "Microsoft 365",
     "spend": 46,
+    "usage": 25,
+    "renewal_date": "01/01/22",
     "user_id": 8
   }
 ]

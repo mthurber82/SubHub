@@ -20,6 +20,14 @@ Subscription.init(
       type: DataTypes.INTEGER,
       allowNull: true,
     },
+    usage: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    renewal_date: {
+      type: DataTypes.DATEONLY,
+      allowNull: true,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

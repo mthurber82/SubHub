@@ -1,23 +1,16 @@
 const router = require("express").Router();
 const { Subscription, User } = require("../models");
 const withAuth = require("../utils/auth");
+const sequelize = require("../Config/connection");
 
 router.get("/", async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const subscriptionData = await Subscription.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
-      attributes: ["subscription_name"],
-      distinct: true,
-    });
-
-    // Serialize data so the template can read it
-    const subs = subscriptionData.map((sub) => sub.get({ plain: true }));
+    const subscriptionData = await sequelize.query(
+      "SELECT DISTINCT(subscription_name) FROM Subscription"
+    );
+    console.log(subscriptionData);
+    subs = subscriptionData[0];
 
     // Pass serialized data and session flag into template
     res.render("landing", {
@@ -32,8 +25,24 @@ router.get("/", async (req, res) => {
 router.get("/createUser", async (req, res) => {
   res.render("createUser");
 });
+
 router.get("/createSubscription", withAuth, async (req, res) => {
-  res.render("createSubscription");
+  try {
+    // Get all projects and JOIN with user data
+    const subscriptionData = await sequelize.query(
+      "SELECT DISTINCT(subscription_name) FROM Subscription"
+    );
+    console.log(subscriptionData);
+    subs = subscriptionData[0];
+
+    // Pass serialized data and session flag into template
+    res.render("createSubscription", {
+      subs,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get("/dashboard", withAuth, async (req, res) => {
