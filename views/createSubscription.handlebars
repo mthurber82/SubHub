@@ -1,5 +1,4 @@
-<div>
-  <h1>Add Subscription</h1>
+ <h1 class="main">Add Subscription</h1>
   <form class="AddSub">
     <label>Subscription Name: </label>
     <input id="subname" type="text" /><br />
@@ -11,6 +10,24 @@
     <input id="renewal" type="date" /><br />
     <input type="submit" value="Add" />
   </form>
+
+
+<div class="search">
+  <form id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+        </form>
+</div>
+<div class="inventory">
+    <div class="getSub">
+    <div class="searchItem">
+        <p class="itemName"></p>
+    </div>
+    {{#each subs as |subscript|}}
+      <div>
+        <p class="itemName">{{subscript.subscription_name}}</p>
+
+    {{/each}}
+  </div>
 </div>
 
 <script src="./js/subCreate.js"></script>
