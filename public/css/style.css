@@ -1,3 +1,4 @@
+
 /* This section of CSS is applying styling for login.handlebars */
 input[type=text], select {
     width: 100%;
@@ -79,3 +80,14 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+img{
+    height: 200px; 
+    width: 200px; 
+    max-width: 200px; 
+    max-height: 200px;
+}
+#charts {
+  max-width: 500;
+}
+
