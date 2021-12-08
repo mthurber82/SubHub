@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Subscription } = require("../../models");
 const withAuth = require("../../utils/auth");
+const { Op } = require("sequelize");
 
 //Create New Subscription
 
@@ -36,19 +37,6 @@ router.get("/", withAuth, async (req, res) => {
     res.status(500).json({
       status: "Fail",
       message: "Could not get users subscriptions",
-    });
-  }
-});
-router.get("/:id", withAuth, async (req, res) => {
-  try {
-    const getSub = await Subscription.findByPk(req.params.id, {});
-    const sub = getSub.get({ plain: true });
-    req.session.sub_id = sub.id;
-    res.json(sub);
-  } catch (err) {
-    res.status(500).json({
-      status: "Fail",
-      message: "Could not grab subscription",
     });
   }
 });
@@ -101,6 +89,49 @@ router.delete("/:subId", withAuth, async (req, res) => {
     res.status(500).json({
       status: "Fail",
       message: "Could not delete subscription",
+    });
+  }
+});
+
+router.get("/search", withAuth, async (req, res) => {
+  const { name } = req.query;
+  console.log(name);
+  try {
+    const getSub = await Subscription.findAll({
+      where: {
+        subscription_name: {
+          [Op.startsWith]: name,
+        },
+      },
+      options: {
+        distinct: true,
+      },
+    });
+    if (!getSub) {
+      res.json({
+        status: "Not Found",
+        message: "No subscription found with this name",
+      });
+    }
+    res.json(getSub);
+  } catch (err) {
+    res.status(500).json({
+      status: "Fail",
+      message: err,
+    });
+  }
+});
+
+router.get("/:id", withAuth, async (req, res) => {
+  try {
+    const getSub = await Subscription.findByPk(req.params.id, {});
+    const sub = getSub.get({ plain: true });
+    req.session.sub_id = sub.id;
+    res.json(sub);
+  } catch (err) {
+    res.status(500).json({
+      status: "Fail",
+      message: "Could not grab subscription",
     });
   }
 });
