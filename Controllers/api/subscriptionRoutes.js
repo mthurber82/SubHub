@@ -124,12 +124,13 @@ router.get("/search", withAuth, async (req, res) => {
 
 router.get("/validate", withAuth, async (req, res) => {
   const { name } = req.query;
+  var nametrunc = name.substring(0, 3);
   console.log(name);
   try {
     const getSub = await Subscription.findAll({
       where: {
         subscription_name: {
-          [Op.startsWith]: name,
+          [Op.startsWith]: nametrunc,
         },
       },
       options: {
