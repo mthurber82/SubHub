@@ -1,54 +1,36 @@
-/* This section of CSS is applying styling for login.handlebars */
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-  
-  div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
+This section of CSS is applying styling for login.handlebars input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
-  /* html,
-body {
-  height: 100%;
+input[type="submit"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
 }
 
 body {
-  display: -ms-flexbox;
-  display: -webkit-box;
-  display: flex;
-  -ms-flex-align: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
-} */
+  background-color: #f2f2f2b9;
+}
+
+#hpbody {
+  background-color: rgb(245, 243, 243);
+}
 
 .form-signin {
   width: 100%;
@@ -80,56 +62,74 @@ body {
   border-top-right-radius: 0;
 }
 
-img{
-    height: 200px; 
-    width: 200px; 
-    max-width: 200px; 
-    max-height: 200px;
-}
-#charts {
-  max-width: 500;
-}
-
-img{
-  height: 200px; 
-  width: 200px; 
-  max-width: 200px; 
+img {
+  height: 200px;
+  width: 200px;
+  max-width: 200px;
   max-height: 200px;
 }
-.img-responsive{
+
+.img-responsive {
   height: auto;
   width: auto;
   max-height: 72px;
   max-width: 250px;
 }
-#charts {
-max-width: 500;
-}
+/* #charts {
+  max-width: 500;
+} */
 
 #welcome {
-font-family: 'Luckiest Guy', cursive;
-font-family: 'Yanone Kaffeesatz', sans-serif;
-font-size: xx-large;
+  font-family: "Luckiest Guy", cursive;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: xx-large;
 }
 
-#subtext{
-font-family: 'Luckiest Guy', cursive;
-font-family: 'Yanone Kaffeesatz', sans-serif;
-font-size: xx-large;
+#subtext {
+  font-family: "Luckiest Guy", cursive;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: xx-large;
 }
-.card{
-  font-family: 'Luckiest Guy', cursive;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size:larger;
-  display: inline-block;
+.card {
+  font-family: "Luckiest Guy", cursive;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: large;
 }
 
-.navbar{
-  font-size:large;
+.navbar {
+  font-size: large;
   font-weight: bold;
   background-color: black;
 }
 
-body{
-  background-color: black;
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.border-left-primary {
+  border-left: 0.25rem solid #df4e4e !important;
+}
+.border-left-success {
+  border-left: 0.25rem solid #4edf5a !important;
+}
+.border-left-warning {
+  border-left: 0.25rem solid #dfc94e !important;
+}
+.border-left-info {
+  border-left: 0.25rem solid #4ed5df !important;
+}
+
+.data-card {
+  padding-top: 10px;
+  font-size: medium;
+}
+.charts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.subs img {
+  width: 200px;
 }
