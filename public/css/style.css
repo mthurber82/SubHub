@@ -111,3 +111,25 @@ font-family: 'Luckiest Guy', cursive;
 font-family: 'Yanone Kaffeesatz', sans-serif;
 font-size: xx-large;
 }
+
+#subtext{
+font-family: 'Luckiest Guy', cursive;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size: xx-large;
+}
+.card{
+  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size:larger;
+  display: inline-block;
+}
+
+.navbar{
+  font-size:large;
+  font-weight: bold;
+  background-color: black;
+}
+
+body{
+  background-color: black;
+}

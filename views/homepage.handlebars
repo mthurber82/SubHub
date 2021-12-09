@@ -1,69 +1,43 @@
-<div>
-  <div>
-    Welcome to SubHub! Track all your subscriptions and subscription spending in
-    one place.
-  </div>
-  <div>
+<div id="hpbody">
+  <div id="subtext">
     Your Subscriptions:
   </div>
   <button>
     <a class="nav-link" href="/createSubscription">Create New Subscription</a>
   </button>
-  {{! iterate over each subscription IF the user_id of the subscription matches id of authenticated user}}
-  <div class="getSub">
-    {{#each subscriptions.subscriptions as |subscript|}}
-      <div>
-        <img src="/img/{{subscript.filename}}"  />
-        <p>Name: {{subscript.subscription_name}}</p>
-        <p>Spend: {{subscript.spend}}</p>
-        <p>Usage: {{subscript.usage}} hrs per week</p>
-        <p>Renewal Date:{{subscript.renewal_date}}</p>
-      </div>
-      <button
-        class="btn btn-sm btn-primary"
-        data-update={{subscript.id}}
-        data-toggle="modal"
-        data-target="#updateModal"
-        id="first-update"
-      >Update</button>
-      <button
-        class="btn btn-sm btn-danger"
-        data-update={{subscript.id}}
-        data-toggle="modal"
-        data-target="#deleteModal"
-      >Delete</button>
-
-    {{/each}}
-  </div>
-
   <div id="charts">
     <canvas id="myChart"></canvas>
+  </div>
+  {{! iterate over each subscription IF the user_id of the subscription matches id of authenticated user}}
+  <div>
+    {{#each subscriptions.subscriptions as |subscript|}}
+    <div class="card" style="width: 18rem;">
+      <img src="/img/{{subscript.filename}}" />
+      <p>Name: {{subscript.subscription_name}}</p>
+      <p>Spend: {{subscript.spend}}</p>
+      <p>Usage: {{subscript.usage}} hrs per week</p>
+      <p>Renewal Date:{{subscript.renewal_date}}</p>
+      <button class="btn btn-sm btn-primary" data-update={{subscript.id}} data-toggle="modal" data-target="#updateModal"
+        id="first-update">Update</button>
+      <button class="btn btn-sm btn-danger" data-update={{subscript.id}} data-toggle="modal"
+        data-target="#deleteModal">Delete</button>
+    </div>
+    {{/each}}
   </div>
 
 </div>
 
-<div
-  class="modal fade"
-  id="updateModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="updateModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="updateModalLabel">Update your subscription</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div id="subcard" class="modal-body">
         <form>
           <div class="form-group">
             <label for="sub-name" class="col-form-label">Name:</label>
@@ -84,45 +58,24 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-primary"
-          id="update-button"
-          data-put=""
-        >Update</button>
+        <button type="button" class="btn btn-primary" id="update-button" data-put="">Update</button>
       </div>
     </div>
   </div>
 </div>
 
-<div
-  class="modal fade"
-  id="deleteModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="deleteModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="deleteModalLabel">Are you sure?</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-footer">
-        <button
-          type="button"
-          class="btn btn-primary"
-          id="delete-button"
-          data-put=""
-        >Delete</button>
+        <button type="button" class="btn btn-primary" id="delete-button" data-put="">Delete</button>
       </div>
     </div>
   </div>
