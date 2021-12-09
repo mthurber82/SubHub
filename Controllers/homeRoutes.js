@@ -2,19 +2,22 @@ const router = require("express").Router();
 const { Subscription, User } = require("../models");
 const withAuth = require("../utils/auth");
 const sequelize = require("../Config/connection");
+const { Op } = require("sequelize");
 
 router.get("/", async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const subscriptionData = await sequelize.query(
-      "SELECT DISTINCT(subscription_name) FROM Subscription"
-    );
-    console.log(subscriptionData);
-    subs = subscriptionData[0];
+    const subscriptionData = await Subscription.findAll({
+      attributes: [
+        [sequelize.fn("sum", sequelize.col("spend")), "total_spend"],
+      ],
+      raw: true,
+    });
+    const total = subscriptionData[0].total_spend * 12;
 
     // Pass serialized data and session flag into template
     res.render("landing", {
-      subs,
+      total,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -32,7 +35,6 @@ router.get("/createSubscription", withAuth, async (req, res) => {
     const subscriptionData = await sequelize.query(
       "SELECT DISTINCT(subscription_name) FROM Subscription"
     );
-    console.log(subscriptionData);
     subs = subscriptionData[0];
 
     // Pass serialized data and session flag into template
@@ -52,10 +54,43 @@ router.get("/dashboard", withAuth, async (req, res) => {
       attributes: { exclude: ["password"] },
       include: [{ model: Subscription }],
     });
+    const costs = await User.findByPk(req.session.user_id, {
+      include: {
+        model: Subscription,
+      },
+      attributes: [
+        [sequelize.fn("sum", sequelize.col("spend")), "total_spend"],
+      ],
+      raw: true,
+    });
+    const usageNum = await User.findByPk(req.session.user_id, {
+      include: {
+        model: Subscription,
+      },
+      attributes: [
+        [sequelize.fn("max", sequelize.col("usage")), "total_usage"],
+      ],
+      raw: true,
+    });
+    console.log(usageNum.total_usage);
+    const usage = await Subscription.findAll({
+      where: {
+        [Op.and]: [
+          { user_id: req.session.user_id },
+          { usage: usageNum.total_usage },
+        ],
+      },
+      raw: true,
+    });
     const subscriptions = getSubs.get({ plain: true });
-    console.log(subscriptions);
+    const annual = costs.total_spend * 12;
+    sumUsage = usage[0];
+
     res.render("homepage", {
       subscriptions,
+      costs,
+      annual,
+      sumUsage,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

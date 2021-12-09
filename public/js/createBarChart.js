@@ -5,12 +5,12 @@ const bars = {
   datasets: [
     {
       label: "Hrs/Week",
-      data: [2, 24, 30, 1],
+      data: usage,
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
         "rgb(54, 162, 235, 0.2)",
         "rgba(255, 205, 86, 0.2)",
-        "rgba(255, 99, 132, 0.2)",
+        "rgba(0, 153, 0, 0.2)",
         "rgb(54, 162, 235, 0.2)",
         "rgba(255, 205, 86, 0.2)",
       ],
