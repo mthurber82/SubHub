@@ -44,7 +44,7 @@ DU Full Stack Web Development Bootcamp Project 2: Subscription Manager
 [https://github.com/carsonccu](https://github.com/carsonccu)
 
 ## GitHub Repository Link
-[https://github.com/mthurber82/project2](https://github.com/mthurber82/SubHub)
+[https://github.com/mthurber82/SubHub](https://github.com/mthurber82/SubHub)
 
 ## Wireframe
 ![image](https://user-images.githubusercontent.com/88950849/144348863-b1f1eef9-eea2-49dc-ba55-8a8a7b324a34.png)
