@@ -90,3 +90,24 @@ img{
   max-width: 500;
 }
 
+img{
+  height: 200px; 
+  width: 200px; 
+  max-width: 200px; 
+  max-height: 200px;
+}
+.img-responsive{
+  height: auto;
+  width: auto;
+  max-height: 72px;
+  max-width: 250px;
+}
+#charts {
+max-width: 500;
+}
+
+#welcome {
+font-family: 'Luckiest Guy', cursive;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size: xx-large;
+}
