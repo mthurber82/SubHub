@@ -28,6 +28,10 @@ Subscription.init(
       type: DataTypes.DATEONLY,
       allowNull: true,
     },
+    filename: {
+      type: DataTypes.STRING,
+      defaultValue: "default.png",
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

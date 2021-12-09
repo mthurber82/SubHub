@@ -4,6 +4,7 @@
     "spend": 40,
     "usage": 20,
     "renewal_date": "5/01/22",
+    "filename": "netflix.png",
     "user_id": 1
   },
   {
@@ -11,6 +12,7 @@
     "spend": 60,
     "usage": 40,
     "renewal_date": "6/23/22",
+    "filename": "24hour.png",
     "user_id": 4
   },
   {
@@ -18,6 +20,7 @@
     "spend": 100,
     "usage": 10,
     "renewal_date": "7/17/22",
+    "filename": "frontendmasters.png",
     "user_id": 6
   },
   {
@@ -25,6 +28,7 @@
     "spend": 45,
     "usage": 5,
     "renewal_date": "4/12/22",
+    "filename": "hulu.jpg",
     "user_id": 8
   },
   {
@@ -32,6 +36,7 @@
     "spend": 13,
     "usage": 2,
     "renewal_date": "7/13/22",
+    "filename": "trifecta.png",
     "user_id": 2
   },
   {
@@ -39,6 +44,7 @@
     "spend": 150,
     "usage": 20,
     "renewal_date": "6/01/22",
+    "filename": "headspace.png",
     "user_id": 4
   },
   {
@@ -46,13 +52,23 @@
     "spend": 20,
     "usage": 6,
     "renewal_date": "12/23/21",
+    "filename": "forbes.png",
     "user_id": 6
+  },
+  {
+    "subscription_name": "Amazon",
+    "spend": 46,
+    "usage": 25,
+    "renewal_date": "01/01/22",
+    "filename": "amazon.png",
+    "user_id": 8
   },
   {
     "subscription_name": "Microsoft 365",
     "spend": 46,
     "usage": 25,
     "renewal_date": "01/01/22",
-    "user_id": 8
+    "filename": "microsoft365.png",
+    "user_id": 2
   }
 ]
