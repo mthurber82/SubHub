@@ -25,11 +25,11 @@ input[type="submit"]:hover {
 }
 
 body {
-  background-color: #f2f2f2b9;
+  background-color: white;
 }
 
 #hpbody {
-  background-color: rgb(245, 243, 243);
+  background-color: rgb(228, 228, 228);
 }
 
 .form-signin {
@@ -62,12 +62,12 @@ body {
   border-top-right-radius: 0;
 }
 
-img {
+/* img {
   height: 200px;
   width: 200px;
   max-width: 200px;
   max-height: 200px;
-}
+} */
 
 .img-responsive {
   height: auto;
@@ -99,11 +99,9 @@ img {
 .navbar {
   font-size: large;
   font-weight: bold;
-  background-color: black;
+  background-color: white;
 }
 
-.row {
-}
 .border-left-primary {
   border-left: 0.25rem solid #df4e4e !important;
 }
@@ -139,4 +137,47 @@ img {
 }
 .createSub a {
   color: white;
+}
+.screenshot {
+  width: 700px;
+  border-radius: 5%;
+}
+.intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin-bottom: 50px;
+}
+/* .intro p {
+  color: white;
+} */
+.photos img {
+  width: 200px;
+  height: 150px;
+}
+
+.images {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 50px;
+}
+.dataVis {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  background-color: rgb(230, 228, 228);
+}
+
+a {
+  color: white;
+}
+
+.dataVis img {
+  margin-bottom: 20px;
 }

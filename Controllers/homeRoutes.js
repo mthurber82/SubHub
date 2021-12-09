@@ -85,7 +85,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
     const subscriptions = getSubs.get({ plain: true });
     const annual = costs.total_spend * 12;
     sumUsage = usage[0];
-
+    console.log(subscriptions);
     res.render("homepage", {
       subscriptions,
       costs,
