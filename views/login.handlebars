@@ -1,5 +1,5 @@
 <div class="text-center">
-  {{!-- <h1>Login</h1>
+  {{! <h1>Login</h1>
   <form class="login-form">
     <label>Username: </label>
     <input id="uname" type="text" value="Lernantino" /><br />
@@ -7,24 +7,35 @@
     <input id="pword" type="password" value="password12345" /><br />
     <input type="submit" value="Login" />
   </form>
-</div> --}}
+</div> }}
 
-{{!-- replacing with bootstrap login form** --}}
-<form class="form-signin">
-      
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputuser" class="sr-only">User ID</label>
-      <input type="text" id="uname" class="form-control" placeholder="User ID" required="" autofocus="">
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="pword" class="form-control" placeholder="Password" required="">
-      <div class="checkbox mb-3">
-        
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      
-    </form>
+  {{! replacing with bootstrap login form** }}
+  <form class="form-signin login-form">
+
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputuser" class="sr-only">User ID</label>
+    <input
+      type="text"
+      id="uname"
+      class="form-control"
+      placeholder="User ID"
+      required=""
+      autofocus=""
+    />
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input
+      type="password"
+      id="pword"
+      class="form-control"
+      placeholder="Password"
+      required=""
+    />
+    <div class="checkbox mb-3">
+
     </div>
- 
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
+  </form>
+</div>
 
 <script src="./js/login.js"></script>
-
