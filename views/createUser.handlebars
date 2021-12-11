@@ -1,4 +1,5 @@
 <div class="text-center">
+
   <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
   <form class="form-signin login-form">
     <label for="inputuser" class="sr-only">User ID</label>
@@ -12,13 +13,30 @@
     /><br />
     <label for="inputPassword" class="sr-only">Password</label>
    <input
+  <h1 class="h3 mb-3 font-weight-normal">New User Signup</h1>
+  <form class="form-signin login-form">
+    <label for="inputuser" class="sr-only">Username: </label>
+    <input <input
+      type="text"
+      id="uname"
+      class="form-control"
+      placeholder="Create User ID"
+      required=""
+      autofocus=""
+    /><br />
+    <label for="inputPassword" class="sr-only">Password: </label>
+      <input
       type="password"
       id="pword"
       class="form-control"
       placeholder="Create Password"
       required=""
     />
+
     <label for="inputPassword" class="sr-only">Confirm Password: </label>
+
+    <label for "confirmPassword" class="sr-only">Confirm Password: </label>
+
     <input
       type="password"
       id="pword"
@@ -27,6 +45,7 @@
       required=""
     /><br />
     <input type="submit" value="Create Account" />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
   </form>
 </div>
 

@@ -10,27 +10,30 @@
   <label>Renewal Date </label>
   <input id="renewal" type="date" /><br />
   <input type="submit" value="Add" />
+</form>
+
+<form id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+  <input id="search" type="search" class="form-control" placeholder="Search..." aria-label="Search">
+</form>
+
+{{!-- <div class="search">
   <form id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
   </form>
+  </div> --}}
 
 
-  {{!-- <div class="search">
-    <form id="search" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-      <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-    </form> --}}
-  </div>
-  <div class="inventory">
-    <div class="getSub">
-      <div class="searchItem">
-        <p class="itemName"></p>
-      </div>
-      {{#each subs as |subscript|}}
-      <div>
-        <p class="itemName">{{subscript.subscription_name}}</p>
-
-        {{/each}}
-      </div>
+<div class="inventory">
+  <div class="getSub">
+    <div class="searchItem">
+      <p class="itemName"></p>
     </div>
+    {{#each subs as |subscript|}}
+    <div>
+      <p class="itemName">{{subscript.subscription_name}}</p>
 
-    <script src="./js/subCreate.js"></script>
+      {{/each}}
+    </div>
+  </div>
+
+  <script src="./js/subCreate.js"></script>
