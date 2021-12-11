@@ -1,6 +1,6 @@
 let subId;
 const getcontentHandler = async (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   if (event.target.hasAttribute("data-update")) {
     const id = event.target.getAttribute("data-update");
 
@@ -9,6 +9,7 @@ const getcontentHandler = async (event) => {
     const response = await fetch(`/api/subscription/${id}`);
 
     const subData = await response.json();
+    console.log(subData);
 
     document.querySelector("#sub-name").value = subData.subscription_name;
     document.querySelector("#sub-spend").value = subData.spend;

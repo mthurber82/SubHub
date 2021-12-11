@@ -1,32 +1,156 @@
-<div id="hpbody">
-  <div id="subtext">
+<div id="hpbody" >
+  <h4>Howdy, {{subscriptions.username}}</h4>
+  <div class="row container-fluid data-card">
+
+                        <!-- Earnings (Monthly) Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Expenses (Monthly)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${{costs.total_spend}}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Annually) Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Expenses (Annual)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">${{annual}}
+                                          </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Top Used App -->
+                        <div class="col-xl-3 col-md-6 mb-4 ">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Top Used App
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{sumUsage.subscription_name}}</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 70%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="90"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clock fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total Subscriptions -->
+                        <div class="col-xl-3 col-md-2 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Total Subscriptions</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{subscriptions.subscriptions.length}}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+<div class="row container-fluid charts">
+       <button class="createSub">
+        <a class="nav-link" href="/createSubscription">Create New Subscription</a>
+      </button> 
+                        <!-- Area Chart -->
+                        <div class="col-xl-6 col-lg-3">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Subscription Usage</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                        <canvas id="barChart" style="height: 145px; width: 294px;" width="254" height="120" class="chartjs-render-monitor"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                        <div class="col-xl-3 col-md-2 mb-4">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Subscription Spend</h6>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                        <canvas id="myChart" width="154" height="60" style="height: 65px; width: 150px;" class="chartjs-render-monitor"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                      <div id="subtext">
     Your Subscriptions:
   </div>
-  <button>
-    <a class="nav-link" href="/createSubscription">Create New Subscription</a>
-  </button>
-  <div id="charts">
-    <canvas id="myChart"></canvas>
-  </div>
+
   {{! iterate over each subscription IF the user_id of the subscription matches id of authenticated user}}
-  <div>
-    {{#each subscriptions.subscriptions as |subscript|}}
-    <div class="card" style="width: 18rem;">
-      <img src="/img/{{subscript.filename}}" />
-      <p>Name: {{subscript.subscription_name}}</p>
-      <p>Spend: {{subscript.spend}}</p>
-      <p>Usage: {{subscript.usage}} hrs per week</p>
-      <p>Renewal Date:{{subscript.renewal_date}}</p>
-      <button class="btn btn-sm btn-primary" data-update={{subscript.id}} data-toggle="modal" data-target="#updateModal"
-        id="first-update">Update</button>
-      <button class="btn btn-sm btn-danger" data-update={{subscript.id}} data-toggle="modal"
-        data-target="#deleteModal">Delete</button>
+  <div class="row container-fluid text-center getSub">
+            {{#each subscriptions.subscriptions as |subscript|}}
+                          <div class="col-xl-3 col-md-6 mb-4">
+                          <div class="card shadow mb-4">
+                              <!-- Card Header - Dropdown -->
+                              <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                  <h3 class="m-0 font-weight-bold text-primary">{{subscript.subscription_name}}</h3>
+                              </div>
+                              <!-- Card Body -->
+                              <div class="card-body subs">
+                                   <img src="/img/{{subscript.filename}}" />
+                                    <p >Spend: {{subscript.spend}}</p>
+                                    <p>Usage: {{subscript.usage}} hrs per week</p>
+                                    <p>Renewal Date:{{subscript.renewal_date}}</p>
+                                    <button class="btn btn-sm btn-primary" data-update={{subscript.id}} data-toggle="modal" data-target="#updateModal"
+                                      id="first-update">Update</button>
+                                    <button class="btn btn-sm btn-danger" data-update={{subscript.id}} data-toggle="modal"
+                                      data-target="#deleteModal">Delete</button>
+                              </div>
+                            </div>
     </div>
-    {{/each}}
-  </div>
-
-</div>
-
+                      {{/each}}
+    </div>
 <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -80,7 +204,9 @@
     </div>
   </div>
 </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./js/createChart.js"></script>
+<script src="./js/createBarChart.js"></script>
 <script src="./js/subscriptions.js"></script>
