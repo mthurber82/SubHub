@@ -32,11 +32,10 @@ input[type=text], select {
   }
   
   
-  /* html,
+
 body {
   height: 100%;
-This section of CSS is applying styling for login.handlebars input[type="text"],
-select {
+
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -105,7 +104,7 @@ body {
   width: 200px;
   max-width: 200px;
   max-height: 200px;
-} */
+}
 
 .img-responsive {
   height: auto;
