@@ -22,10 +22,10 @@ const getcontentHandler = async (event) => {
 
 const uptateBtnhandler = async (event) => {
   if (event.target.hasAttribute("data-put")) {
-    const subscription_name = document.querySelector("#sub_name").value;
-    const spend = document.querySelector("#sub_spend").value;
-    const usage = document.querySelector("#sub_usage").value;
-    const renewal_date = document.querySelector("#sub_renewal").value;
+    const subscription_name = document.querySelector("#sub-name").value;
+    const spend = document.querySelector("#sub-spend").value;
+    const usage = document.querySelector("#sub-usage").value;
+    const renewal_date = document.querySelector("#sub-renewal").value;
 
     const response = await fetch(`/api/subscription/${subId}`, {
       method: "PUT",
