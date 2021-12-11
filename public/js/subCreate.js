@@ -1,46 +1,51 @@
 const createHandler = async (event) => {
   event.preventDefault();
-  //Look Up Images
-  const imgs = await fetch("api/subscription/imgs");
-  const imglist = await imgs.json();
-  //Define Values
-  const subscription_name = document.querySelector("#subname").value;
-  const spend = document.querySelector("#spendmonthly").value;
-  const usage = document.querySelector("#usage").value;
-  const renewal_date = document.querySelector("#renewal").value;
-  //Define Filename for logo if available
-  const imgText = `${subscription_name.toLowerCase()}.png`;
-  let filename;
-  if (imglist.includes(imgText)) {
-    filename = `${subscription_name}.png`;
-  } else {
-    filename = "default.png";
-  }
-
-  if (subscription_name && spend && usage && renewal_date) {
-    const response = await fetch("api/subscription", {
-      method: "POST",
-      body: JSON.stringify({
-        subscription_name,
-        spend,
-        usage,
-        renewal_date,
-        filename,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (response.ok) {
-      const type = "success";
-      const message = "Subscription Created!";
-      showAlert(type, message);
-      document.location.replace("/dashboard");
+  try {
+    //Look Up Images
+    const imgs = await fetch("api/subscription/imgs");
+    const imglist = await imgs.json();
+    //Define Values
+    const subscription_name = document.querySelector("#subname").value;
+    const spend = document.querySelector("#spendmonthly").value;
+    const usage = document.querySelector("#usage").value;
+    const renewal_date = document.querySelector("#renewal").value;
+    //Define Filename for logo if available
+    const imgText = `${subscription_name.toLowerCase()}.png`;
+    let filename;
+    if (imglist.includes(imgText)) {
+      filename = `${subscription_name}.png`;
     } else {
-      alert("Failed to create subscription");
+      filename = "default.png";
     }
+
+    if (subscription_name && spend && usage && renewal_date) {
+      const response = await fetch("api/subscription", {
+        method: "POST",
+        body: JSON.stringify({
+          subscription_name,
+          spend,
+          usage,
+          renewal_date,
+          filename,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (response.ok) {
+        const type = "success";
+        const message = "Subscription Created!";
+        showAlert(type, message);
+        document.location.replace("/dashboard");
+      } else {
+        alert("Failed to create subscription");
+      }
+    }
+  } catch (err) {
+    console.error(err);
   }
 };
+
 
 const searchHandler = async (event) => {
   event.preventDefault();
@@ -140,7 +145,7 @@ const updateName = async (event) => {
   document.querySelector("#subname").value = updatedName;
 };
 
-document.querySelector(".AddSub").addEventListener("submit", createHandler);
+document.querySelector("#create").addEventListener("submit", createHandler);
 document.querySelector("#search").addEventListener("submit", searchHandler);
 
 document.querySelector(".getSub").addEventListener("click", addItemhandler);
