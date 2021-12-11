@@ -1,13 +1,32 @@
-<div>
-  <h1>New User Signup</h1>
-  <form class="newUser">
-    <label>Username: </label>
-    <input id="uname" type="text" /><br />
-    <label>Password: </label>
-    <input id="pword" type="text" /><br />
-    <label>Confirm Password: </label>
-    <input id="pword" type="text" /><br />
-    <input type="submit" value="Create Account" />
+<div class="text-center">
+  <h1 class="h3 mb-3 font-weight-normal">New User Signup</h1>
+  <form class="form-signin login-form">
+    <label for="inputuser" class="sr-only">Username: </label>
+    <input <input
+      type="text"
+      id="uname"
+      class="form-control"
+      placeholder="Create User ID"
+      required=""
+      autofocus=""
+    /><br />
+    <label for="inputPassword" class="sr-only">Password: </label>
+      <input
+      type="password"
+      id="pword"
+      class="form-control"
+      placeholder="Create Password"
+      required=""
+    />
+    <label for "confirmPassword" class="sr-only">Confirm Password: </label>
+    <input
+      type="password"
+      id="pword"
+      class="form-control"
+      placeholder="Confirm Password"
+      required=""
+    /><br />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
   </form>
 </div>
 
