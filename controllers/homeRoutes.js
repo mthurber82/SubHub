@@ -33,7 +33,7 @@ router.get("/createSubscription", withAuth, async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const subscriptionData = await sequelize.query(
-      "SELECT DISTINCT(subscription_name) FROM Subscription"
+      "SELECT DISTINCT subscription_name, filename FROM Subscription"
     );
     subs = subscriptionData[0];
 

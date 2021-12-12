@@ -1,41 +1,6 @@
-
 /* This section of CSS is applying styling for login.handlebars */
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #45a049;
-  }
-  
-  div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
-  
-  
-
-body {
-  height: 100%;
-
+input[type="text"],
+select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -58,7 +23,21 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: #45a049;
+}
 
+input[type="submit"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
 }
 
 body {
@@ -99,23 +78,6 @@ body {
   border-top-right-radius: 0;
 }
 
-/* img {
-  height: 200px;
-  width: 200px;
-  max-width: 200px;
-  max-height: 200px;
-}
-
-.img-responsive {
-  height: auto;
-  width: auto;
-  max-height: 72px;
-  max-width: 250px;
-}
-/* #charts {
-  max-width: 500;
-} */
-
 #welcome {
   font-family: "Luckiest Guy", cursive;
   font-family: "Yanone Kaffeesatz", sans-serif;
@@ -152,15 +114,11 @@ body {
   border-left: 0.25rem solid #4ed5df !important;
 }
 
-body{
-  background-color: black;
-}
-
-#create{
+#create {
   color: #ccc;
 }
 
-.main1{
+.main {
   font-size: x-large;
 }
 
@@ -195,13 +153,10 @@ body{
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: space-between; */
   background-color: white;
   margin-bottom: 50px;
 }
-/* .intro p {
-  color: white;
-} */
+
 .photos img {
   width: 200px;
   height: 150px;
@@ -246,7 +201,15 @@ a {
   border-radius: 50%;
 }
 
+.addSub {
+  background-color: black;
+}
+
 @media (max-width: 900px) {
   /* .navbar-nav {
     visibility: hidden; */
+}
+
+.itemName:hover {
+  cursor: pointer;
 }
