@@ -81,6 +81,7 @@ const addItemhandler = async (event) => {
   if (event.target.className === "itemName") {
     const type = "primary";
     showAlert(type, "Add Remaining Info");
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     const name = event.target.innerText;
     document.querySelector("#subname").value = name;
   }
