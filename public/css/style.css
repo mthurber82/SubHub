@@ -205,9 +205,38 @@ a {
   background-color: black;
 }
 
-@media (max-width: 900px) {
-  /* .navbar-nav {
-    visibility: hidden; */
+@media (max-width: 1200px) {
+  .charts {
+    /* display: inline-block; */
+    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .charting {
+    width: 100%;
+  }
+}
+@media (max-width: 990px) {
+  .responsive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (max-width: 700px) {
+  .screenshot {
+    max-width: 350px;
+  }
+}
+@media (max-width: 1350px) {
+  .screenshot {
+    max-width: 550px;
+  }
 }
 
 .itemName:hover {
