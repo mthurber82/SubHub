@@ -46,7 +46,6 @@ const createHandler = async (event) => {
   }
 };
 
-
 const searchHandler = async (event) => {
   event.preventDefault();
   const subscription_name = document.querySelector(".form-control").value;
@@ -57,15 +56,17 @@ const searchHandler = async (event) => {
     );
     const box = document.querySelector(".searchItem");
     const subData = await response.json();
-
     if (subData.length) {
       vals = [];
       subData.map((sub) => vals.push(sub.subscription_name));
       let uniqueSubs = [...new Set(vals)];
       uniqueSubs.map((sub) => {
-        const item = document.createElement("p");
-        item.classList.add("itemName");
+        const item = document.createElement("h3");
+        item.className = "itemName";
         item.innerText = sub;
+        const icon = document.createElement("i");
+        icon.className = "far fa-plus-square";
+        item.appendChild(icon);
         box.appendChild(item);
       });
     } else {
@@ -100,7 +101,7 @@ async function presentNames(options) {
   if (!document.querySelector(".DYM")) {
     const placement = document.querySelector(".main");
     const div = document.createElement("div");
-    div.className = "DYM";
+    div.className = "DYM mt-4";
     const h3 = document.createElement("h3");
     h3.innerText = "Did you mean:";
     placement.appendChild(div);
