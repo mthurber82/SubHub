@@ -1,21 +1,28 @@
-# project2
+# SUBHUB
 
-DU Full Stack Web Development Bootcamp Project 2: Subscription Manager
+)
+[![project-languages-used](https://img.shields.io/github/languages/count/msp4msps/SubHub?color=important)](https://github.com/mthurber82/SubHub)
+[![project-top-language](https://img.shields.io/github/languages/top/msp4msps/SubHub?color=blueviolet)](https://github.com/mthurber82/SubHub)
+[![license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://choosealicense.com/licenses/mit/)
 
-## Contents
+## Table of Content
 
-- [Description](#Description)
-- [Screenshot](Screenshots)
-- [Installation](#Installation)
-- [Instructions](#Instructions)
-- [Liscence](#Liscence)
-- [Contributors](#Contributors)
-- [Contacts](#ContributorGithubs)
-- [GitHub Repository Link](#GitHubRepositoryLink)
-- [Video Recording Link](#VideoRecordingLink)
-- [Seed DB Steps](#SeedDBSteps)
+- [ Project Links ](#Project-Links)
+- [ Screenshots](#Screenshot:)
+- [ Project Description ](#Project-Description)
+- [ User Story ](#User-Story)
+- [ Technologies ](#Technologies)
+- [ Installation ](#Installation)
+- [ Usage ](#Usage)
+- [ Wireframes ](#Wireframe)
+- [ Tests ](#Tests)
+- [ Contributing ](#Contributing)
+- [ Questions ](#Questions)
+- [ License ](#License)
 
-## Description:
+#
+
+## Project-Description
 
     This is a web application for users to store and track their subscriptions and subscription spending. Users can login to the application and store subscription names and their price per month.
 
@@ -23,7 +30,7 @@ DU Full Stack Web Development Bootcamp Project 2: Subscription Manager
 
 ## Screenshot:
 
-![Subscription Manager finished application screeshot](./App_Screenshot.PNG)
+<kbd>![screenshot1](Public/img/Screenshot2.png)</kbd><kbd>![screenshot2](Public/img/Screenshot3.png)</kbd>
 
 ## Instructions
 
@@ -67,54 +74,10 @@ DU Full Stack Web Development Bootcamp Project 2: Subscription Manager
 
 ![image](https://user-images.githubusercontent.com/88950849/144351318-f07f9333-b375-4ade-83df-31f562b4cfef.png)
 
-## Steps to Seed DB
-
-1. Make a pull request of the main branch
-2. Checkout a new branch (git checkout -b <branchName>
-3. Run npm installl to create your local node_modules flder
-4. Add your secrets to the .env file:
-   DB_NAME=subscription_db
-   DB_USER=
-   DB_PASSWORD=
-   PORT=3000
-5. Connect to mySQL in the terminal (mysql -u <username> -p) and run db/schema.sql to create the DB
-6. Quit your mysql connection and run the following to seed the DB: npm run seed
-
-# SUBHUB
-
-[![github-follow](https://img.shields.io/github/followers/msp4msps?label=Follow&logoColor=purple&style=social)](https://github.com/msp4msps)
-[![project-languages-used](https://img.shields.io/github/languages/count/msp4msps/SubHub?color=important)](https://github.com/msp4msps/SubHub)
-[![project-top-language](https://img.shields.io/github/languages/top/msp4msps/SubHub?color=blueviolet)](https://github.com/msp4msps/SubHub)
-[![license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://choosealicense.com/licenses/mit/)
-
-## Table of Content
-
-- [ Project Links ](#Project-Links)
-- [ Screenshots](#Screenshots)
-- [ Project Description ](#Project-Description)
-- [ User Story ](#User-Story)
-- [ Technologies ](#Technologies)
-- [ Installation ](#Installation)
-- [ Usage ](#Usage)
-- [ Credits and Reference ](#Credits-and-Reference)
-- [ Tests ](#Tests)
-- [ Contributing ](#Contributing)
-- [ Questions ](#Questions)
-- [ License ](#License)
-
-#
-
 ## Project Links
 
-https://github.com/msp4msps/SubHub<br>
-
-## Screenshots-Demo
-
-<kbd>![screenshot1](Public/img/Screenshot2.png)</kbd><kbd>![screenshot2](Public/img/Screenshot3.png)</kbd>
-
-## Project Description
-
-This is a web application for users to store and track their subscriptions and subscription spending. Users can login to the application and store subscription names and their price per month. The app provides unique insights to spending over time and consumption of apps.
+GitHub Repo: https://github.com/msp4msps/SubHub<br>
+Live App: https://sub-hub12.herokuapp.com/<br>
 
 ## User Story
 
@@ -134,10 +97,6 @@ Navigate to the live link to accesss the site
 
 Navigate to the site and click on Sign up from the top nav. Create a username and password. Navigate to the dahsboard tab and click create subscription to start adding new subscriptions.
 
-## Credits and Reference
-
-None
-
 ## Tests
 
 Navigate to the site and sign up, its free!
@@ -148,12 +107,13 @@ Open a pull request
 
 ## Questions
 
-Contact
 Contact the author with any questions!<br>
-Github link: [msp4msps](https://github.com/msp4msps)<br>
-Email: msp4msps@tminus365.com
+Matt Thurbur | mthurber82@gmail.com
+Calvin Swomley | calvinswomley@gmail.com
+Nick Ross | msp4msps@tminus365.com
+Carson Colgate | carsoncolgateccu@gmail.com
 
 ## License
 
 This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.<br />
-Copyright © 2021 [NICK ROSS](https://github.com/msp4msps)
+Copyright © 2021
