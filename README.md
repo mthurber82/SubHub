@@ -1,8 +1,6 @@
 # SUBHUB
 
-)
-[![project-languages-used](https://img.shields.io/github/languages/count/msp4msps/SubHub?color=important)](https://github.com/mthurber82/SubHub)
-[![project-top-language](https://img.shields.io/github/languages/top/msp4msps/SubHub?color=blueviolet)](https://github.com/mthurber82/SubHub)
+
 [![license](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://choosealicense.com/licenses/mit/)
 
 ## Table of Content
@@ -30,7 +28,7 @@
 
 ## Screenshot:
 
-<kbd>![screenshot1](Public/img/Screenshot2.png)</kbd><kbd>![screenshot2](Public/img/Screenshot3.png)</kbd>
+<kbd>![screenshot1](public/img/Screenshot2.png)</kbd><kbd>![screenshot2](public/img/Screenshot3.png)</kbd>
 
 ## Instructions
 
